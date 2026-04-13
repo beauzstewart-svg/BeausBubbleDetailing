@@ -434,11 +434,11 @@ p { font-weight: 300; }
   margin-bottom: 20px;
 }
 .pricing-tab {
-  background: var(--dark3);
-  border: 1px solid var(--white-faint);
+  background: rgba(240,244,255,0.05);
+  border: 1px solid rgba(240,244,255,0.12);
   color: var(--white-dim);
-  padding: 10px 16px;
-  border-radius: var(--radius);
+  padding: 10px 18px;
+  border-radius: 999px;
   cursor: pointer;
   font-size: 0.85rem;
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
@@ -446,9 +446,9 @@ p { font-weight: 300; }
 }
 .pricing-tab:hover,
 .pricing-tab.selected {
-  background: var(--blue-dim);
-  border-color: var(--blue);
-  color: var(--blue-bright);
+  background: rgba(56,189,248,0.16);
+  border-color: rgba(56,189,248,0.42);
+  color: var(--white);
 }
 .service-card {
   background: var(--dark2);
@@ -587,19 +587,6 @@ p { font-weight: 300; }
   background: var(--blue-dim);
   color: var(--blue-bright);
 }
-.addon-note {
-  margin-top: 12px;
-  color: var(--white-dim);
-  font-size: 0.85rem;
-  line-height: 1.65;
-}
-.monthly-subprice {
-  color: var(--blue-bright) !important;
-  font-size: 0.95rem !important;
-  margin-top: -6px;
-  margin-bottom: 8px;
-}
-
 /* -- PRICE GRID -- */
 .price-grid {
   display: grid;
@@ -1044,49 +1031,54 @@ textarea { resize: vertical; min-height: 80px; }
 /* -- STICKY CTA -- */
 .sticky-cta {
   position: fixed;
-  bottom: 24px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 90;
   display: flex;
-  gap: 0;
-  background: rgba(6, 8, 15, 0.92);
-  border: 1px solid rgba(56,189,248,0.36);
-  border-radius: 50px;
-  padding: 5px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 34px rgba(0,0,0,0.5), 0 0 0 1px rgba(14,165,233,0.14);
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(240,244,255,0.22);
+  border-radius: 999px;
+  padding: 8px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.34);
 }
 .sticky-book, .sticky-quote {
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 11px 20px;
-  border-radius: 50px;
+  min-width: 138px;
+  padding: 11px 18px;
+  border-radius: 999px;
   white-space: nowrap;
   transition: transform 0.2s, box-shadow 0.2s, filter 0.2s, background 0.2s;
+  text-align: center;
 }
 .sticky-book {
   background: linear-gradient(135deg, #22d3ee 0%, var(--blue) 55%, #0284c7 100%);
   color: #fff;
-  border: 1px solid rgba(56,189,248,0.58);
-  box-shadow: 0 4px 16px rgba(14,165,233,0.3);
+  border: 1px solid rgba(56,189,248,0.45);
+  box-shadow: 0 8px 18px rgba(14,165,233,0.22);
 }
 .sticky-book:hover {
   filter: brightness(1.06);
-  box-shadow: 0 8px 24px rgba(14,165,233,0.4);
+  box-shadow: 0 12px 24px rgba(14,165,233,0.28);
+  transform: translateY(-1px);
 }
 .sticky-quote {
-  background: transparent;
-  color: var(--white-dim);
-  border: 1px solid transparent;
+  background: rgba(255,255,255,0.88);
+  color: var(--dark1);
+  border: 1px solid rgba(255,255,255,0.4);
 }
 .sticky-quote:hover {
-  color: var(--white);
-  background: var(--white-faint);
+  background: rgba(255,255,255,0.96);
+  transform: translateY(-1px);
 }
 
 /* -- FOOTER -- */
@@ -1283,6 +1275,12 @@ textarea { resize: vertical; min-height: 80px; }
   /* Sticky CTA */
   .sticky-cta {
     bottom: 16px;
+    padding: 6px;
+    gap: 6px;
+  }
+  .sticky-book, .sticky-quote {
+    min-width: 124px;
+    padding: 10px 14px;
   }
   .form-grid { grid-template-columns: 1fr; }
 

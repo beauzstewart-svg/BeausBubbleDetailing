@@ -61,17 +61,17 @@
       }) || tiers[0];
 
       cardsHost.innerHTML =
-        '<article class="service-card">' +
+        '<article class="price-card">' +
         "<h3>Exterior Detail</h3>" +
         '<p class="price">' + money(tier.prices.exterior) + "</p>" +
         "<p>Paint-safe exterior wash with wheel and tire cleaning.</p>" +
         "</article>" +
-        '<article class="service-card">' +
+        '<article class="price-card">' +
         "<h3>Interior Detail</h3>" +
         '<p class="price">' + money(tier.prices.interior) + "</p>" +
         "<p>Vacuum, wipe-down, and interior refresh.</p>" +
         "</article>" +
-        '<article class="service-card full-detail-featured">' +
+        '<article class="price-card featured">' +
         "<h3>Full Detail</h3>" +
         '<p class="price">' + money(tier.prices.fullDetail) + "</p>" +
         "<p>Complete interior and exterior detailing service.</p>" +
@@ -84,9 +84,11 @@
 
       tabsHost.querySelectorAll(".pricing-tab").forEach(function (tab) {
         tab.classList.remove("selected");
+        tab.setAttribute("aria-selected", "false");
       });
 
       button.classList.add("selected");
+      button.setAttribute("aria-selected", "true");
       paintCards(button.getAttribute("data-tier"));
     });
 

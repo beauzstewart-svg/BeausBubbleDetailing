@@ -40,7 +40,7 @@
       }
     ],
     detailTypes: ["Interior Detail", "Exterior Detail", "Full Detail", "Maintenance Wash"],
-    addOns: ["Pet hair removal", "Seat shampoo", "Leather condition", "Spray wax", "Monthly cleans sign-up"],
+    addOns: ["Pet hair removal", "Seat shampoo", "Leather condition", "Spray wax"],
     serviceAreas: [
       {
         id: "dallas",

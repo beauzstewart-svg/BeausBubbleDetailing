@@ -73,15 +73,15 @@
       <section class="section" id="vehicle-pricing">
         <div class="container">
           <div class="section-head">
-            <h2>Services and pricing</h2>
-            <p>Packages can be adjusted based on your vehicle size and needs.</p>
+            <h2>Choose your vehicle size</h2>
+            <p>See simple pricing for Exterior Detail, Interior Detail, and Full Detail.</p>
           </div>
           <div class="pricing-tabs" id="offerVehicleTabs" role="tablist" aria-label="Vehicle size pricing">
-            <button class="pricing-tab selected" type="button" data-tier="sedan-coupe">Sedan/Coupe</button>
-            <button class="pricing-tab" type="button" data-tier="midsize-suv">Midsize/SUV</button>
-            <button class="pricing-tab" type="button" data-tier="suv-trucks">SUV/Trucks</button>
+            <button class="pricing-tab selected" type="button" data-tier="sedan-coupe" role="tab" aria-selected="true">Sedan/Coupe</button>
+            <button class="pricing-tab" type="button" data-tier="midsize-suv" role="tab" aria-selected="false">Midsize/SUV</button>
+            <button class="pricing-tab" type="button" data-tier="suv-trucks" role="tab" aria-selected="false">SUV/Trucks</button>
           </div>
-          <div class="services-grid" id="offerPricingCards"></div>
+          <div class="price-grid" id="offerPricingCards" aria-live="polite"></div>
         </div>
       </section>
 
@@ -92,7 +92,6 @@
             <p>Build a custom detail by adding focused upgrades.</p>
           </div>
           <div class="options-grid" id="addOnServices"></div>
-          <p class="addon-note">Monthly clean sign-up: first visit is a Full Detail vehicle reset, then 20% off Full Details until you opt out. No subscriptions, on-site payments only.</p>
         </div>
       </section>
     </main>
