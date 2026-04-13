@@ -1047,8 +1047,7 @@ textarea { resize: vertical; min-height: 80px; }
   bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
+  display: none;
   z-index: 90;
 }
 .sticky-call, .sticky-text, .sticky-quote, .sticky-book {
@@ -1297,17 +1296,17 @@ textarea { resize: vertical; min-height: 80px; }
 
   /* Sticky CTA */
   .sticky-cta {
+    display: flex;
     bottom: calc(14px + env(safe-area-inset-bottom, 0px));
     width: calc(100% - 24px);
-    max-width: 380px;
-    gap: 10px;
+    max-width: 320px;
+    justify-content: center;
   }
-  .sticky-quote,
   .sticky-book {
-    flex: 1;
+    width: 100%;
     text-align: center;
-    padding: 12px 16px;
-    font-size: 0.75rem;
+    padding: 14px 18px;
+    font-size: 0.8rem;
   }
   .form-grid { grid-template-columns: 1fr; }
 
