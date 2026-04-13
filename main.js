@@ -59,23 +59,6 @@
     return "Starting at " + money(value);
   }
 
-  function renderSimplePricing() {
-    var host = byId("simplePricingCards");
-    if (!host || !Array.isArray(data.simplePricing)) return;
-
-    host.innerHTML = data.simplePricing
-      .map(function (card) {
-        return (
-          '<article class="price-card' + (card.featured ? " featured" : "") + '">' +
-          "<h3>" + card.title + "</h3>" +
-          '<p class="price">' + money(card.price) + "</p>" +
-          "<p>" + card.description + "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-  }
-
   function renderOfferPricing() {
     var tabsHost = byId("offerVehicleTabs");
     var cardsHost = byId("offerPricingCards");
@@ -333,7 +316,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderHeroBadges();
     renderServiceCards();
-    renderSimplePricing();
     renderOfferPricing();
     renderServiceAreas();
     renderOptionButtons("detailTypes", data.detailTypes || [], false);
