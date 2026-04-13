@@ -35,7 +35,7 @@
         return (
           '<article class="' + cardClass + '">' +
           "<h3>" + svc.title + "</h3>" +
-          '<p class="price">' + svc.price + "</p>" +
+          '<p class="price">' + startingAtPrice(svc.price) + "</p>" +
           dealNote +
           "<p>" + svc.description + "</p>" +
           "<ul>" + items + "</ul>" +
@@ -45,8 +45,35 @@
       .join("");
   }
 
+  function roundToNearestFive(value) {
+    var amount = Number(value);
+    if (!Number.isFinite(amount)) return 0;
+    return Math.round(amount / 5) * 5;
+  }
+
   function money(value) {
-    return "$" + Number(value).toLocaleString("en-US", { minimumFractionDigits: value % 1 ? 2 : 0, maximumFractionDigits: 2 });
+    return "$" + roundToNearestFive(value).toLocaleString("en-US");
+  }
+
+  function startingAtPrice(value) {
+    return "Starting at " + money(value);
+  }
+
+  function renderSimplePricing() {
+    var host = byId("simplePricingCards");
+    if (!host || !Array.isArray(data.simplePricing)) return;
+
+    host.innerHTML = data.simplePricing
+      .map(function (card) {
+        return (
+          '<article class="price-card' + (card.featured ? " featured" : "") + '">' +
+          "<h3>" + card.title + "</h3>" +
+          '<p class="price">' + money(card.price) + "</p>" +
+          "<p>" + card.description + "</p>" +
+          "</article>"
+        );
+      })
+      .join("");
   }
 
   function renderOfferPricing() {
@@ -306,6 +333,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     renderHeroBadges();
     renderServiceCards();
+    renderSimplePricing();
     renderOfferPricing();
     renderServiceAreas();
     renderOptionButtons("detailTypes", data.detailTypes || [], false);

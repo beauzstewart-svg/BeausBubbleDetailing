@@ -8,21 +8,39 @@
     services: [
       {
         title: "Interior Detail",
-        price: "Starting at $70",
+        price: 70,
         description: "Deep vacuum, wipe-down, glass cleaning, and interior reset.",
         items: ["Full interior vacuum", "Dashboard and trim wipe-down", "Streak-free windows"]
       },
       {
         title: "Full Detail",
-        price: "Starting at $120",
+        price: 120,
         description: "Complete interior and exterior service for a like-new finish.",
         items: ["Foam hand wash", "Interior detail", "Tire and trim finish"]
       },
       {
         title: "Exterior Detail",
-        price: "Starting at $60",
+        price: 60,
         description: "Paint-safe exterior wash and finish enhancement.",
         items: ["Hand wash", "Wheel and tire clean", "Sealant finish"]
+      }
+    ],
+    simplePricing: [
+      {
+        title: "Interior Detail",
+        price: 110,
+        description: "Vacuum, wipe down, glass, and cabin refresh."
+      },
+      {
+        title: "Full Detail",
+        price: 185,
+        description: "Interior and exterior reset for a like-new finish.",
+        featured: true
+      },
+      {
+        title: "Exterior Detail",
+        price: 90,
+        description: "Paint-safe wash, wheels, tires, and trim care."
       }
     ],
     offerPricingTiers: [
