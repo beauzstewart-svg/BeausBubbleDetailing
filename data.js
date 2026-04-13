@@ -32,11 +32,11 @@
       },
       {
         id: "midsize-suv",
-        prices: { exterior: 69, interior: 80.5, fullDetail: 138 }
+        prices: { exterior: 70, interior: 80, fullDetail: 140 }
       },
       {
         id: "suv-trucks",
-        prices: { exterior: 78, interior: 91, fullDetail: 156 }
+        prices: { exterior: 80, interior: 90, fullDetail: 155 }
       }
     ],
     detailTypes: ["Interior Detail", "Exterior Detail", "Full Detail", "Maintenance Wash"],

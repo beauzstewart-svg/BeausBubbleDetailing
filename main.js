@@ -71,16 +71,10 @@
         '<p class="price">' + money(tier.prices.interior) + "</p>" +
         "<p>Vacuum, wipe-down, and interior refresh.</p>" +
         "</article>" +
-        '<article class="service-card">' +
+        '<article class="service-card full-detail-featured">' +
         "<h3>Full Detail</h3>" +
         '<p class="price">' + money(tier.prices.fullDetail) + "</p>" +
         "<p>Complete interior and exterior detailing service.</p>" +
-        "</article>" +
-        '<article class="service-card">' +
-        "<h3>Monthly Clean Plan</h3>" +
-        '<p class="price">' + money(tier.prices.fullDetail) + " reset</p>" +
-        '<p class="monthly-subprice">Monthly keep-up: ' + money(tier.prices.fullDetail * 0.8) + " (20% off)</p>" +
-        "<p>First visit is a Full Detail reset, then 20% off monthly Full Details until you opt out. No subscription and on-site payments only.</p>" +
         "</article>";
     }
 

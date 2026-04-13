@@ -1044,40 +1044,49 @@ textarea { resize: vertical; min-height: 80px; }
 /* -- STICKY CTA -- */
 .sticky-cta {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 90;
   display: flex;
-  padding: 12px 20px;
-  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
-  background: rgba(6, 8, 15, 0.95);
+  gap: 0;
+  background: rgba(6, 8, 15, 0.92);
+  border: 1px solid rgba(56,189,248,0.36);
+  border-radius: 50px;
+  padding: 5px;
   backdrop-filter: blur(12px);
-  border-top: 1px solid var(--white-faint);
+  box-shadow: 0 10px 34px rgba(0,0,0,0.5), 0 0 0 1px rgba(14,165,233,0.14);
 }
-.sticky-book {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.sticky-book, .sticky-quote {
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 14px 24px;
-  border-radius: 10px;
-  border: 1px solid rgba(56,189,248,0.45);
-  background: linear-gradient(135deg, #22d3ee 0%, var(--blue) 50%, #0284c7 100%);
+  padding: 11px 20px;
+  border-radius: 50px;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s, background 0.2s;
+}
+.sticky-book {
+  background: linear-gradient(135deg, #22d3ee 0%, var(--blue) 55%, #0284c7 100%);
   color: #fff;
-  box-shadow: 0 6px 20px rgba(14,165,233,0.3);
-  transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+  border: 1px solid rgba(56,189,248,0.58);
+  box-shadow: 0 4px 16px rgba(14,165,233,0.3);
 }
 .sticky-book:hover {
-  transform: translateY(-2px);
   filter: brightness(1.06);
-  box-shadow: 0 10px 28px rgba(14,165,233,0.4);
+  box-shadow: 0 8px 24px rgba(14,165,233,0.4);
+}
+.sticky-quote {
+  background: transparent;
+  color: var(--white-dim);
+  border: 1px solid transparent;
+}
+.sticky-quote:hover {
+  color: var(--white);
+  background: var(--white-faint);
 }
 
 /* -- FOOTER -- */
@@ -1115,7 +1124,7 @@ textarea { resize: vertical; min-height: 80px; }
 .footer-links a:hover { color: var(--blue-bright); }
 .footer-bottom {
   border-top: 1px solid var(--white-faint);
-  padding: 20px 28px 72px;
+  padding: 20px 28px 56px;
   text-align: center;
   font-size: 0.78rem;
   color: rgba(240,244,255,0.35);
@@ -1273,8 +1282,7 @@ textarea { resize: vertical; min-height: 80px; }
 
   /* Sticky CTA */
   .sticky-cta {
-    padding: 10px 16px;
-    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    bottom: 16px;
   }
   .form-grid { grid-template-columns: 1fr; }
 
