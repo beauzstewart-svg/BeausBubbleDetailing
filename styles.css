@@ -1044,29 +1044,27 @@ textarea { resize: vertical; min-height: 80px; }
 /* -- STICKY CTA -- */
 .sticky-cta {
   position: fixed;
-  bottom: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 0;
+  gap: 12px;
   z-index: 90;
-  background: rgba(6,8,15,0.9);
-  border: 1px solid rgba(56,189,248,0.36);
-  border-radius: 50px;
-  padding: 6px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 10px 34px rgba(0,0,0,0.5), 0 0 0 1px rgba(14,165,233,0.14);
 }
 .sticky-call, .sticky-text, .sticky-quote, .sticky-book {
   font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 10px 22px;
   border-radius: 50px;
   text-decoration: none;
-  transition: all 0.2s;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background-color 0.2s, color 0.2s;
 }
 .sticky-call {
   color: var(--white-dim);
@@ -1082,28 +1080,28 @@ textarea { resize: vertical; min-height: 80px; }
 .sticky-text:hover { color: var(--white); border-color: rgba(255,255,255,0.3); }
 .sticky-quote {
   padding: 10px 28px;
-  border: 1px solid rgba(56,189,248,0.58);
-  background: linear-gradient(135deg, #22d3ee 0%, var(--blue) 55%, #0284c7 100%);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(14,165,233,0.3);
+  border: 1px solid rgba(240,244,255,0.14);
+  background: rgba(12,15,26,0.96);
+  color: var(--white);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.24);
 }
 .sticky-quote:hover {
-  box-shadow: 0 8px 24px rgba(14,165,233,0.4);
+  border-color: rgba(240,244,255,0.28);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.3);
   transform: translateY(-1px);
-  filter: brightness(1.06);
 }
 .sticky-book {
   padding: 10px 22px;
-  border: 1px solid rgba(34,211,238,0.5);
-  background: linear-gradient(135deg, #14b8a6, #0891b2);
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(6,182,212,0.32);
+  border: 1px solid rgba(240,244,255,0.18);
+  background: var(--white);
+  color: var(--night);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.28);
 }
 .sticky-book:hover {
-  background: linear-gradient(135deg, #5eead4, #22d3ee);
-  box-shadow: 0 8px 24px rgba(6,182,212,0.4);
+  background: #ffffff;
+  border-color: rgba(240,244,255,0.36);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.34);
   transform: translateY(-1px);
-  filter: brightness(1.06);
 }
 
 /* -- FOOTER -- */
@@ -1299,16 +1297,16 @@ textarea { resize: vertical; min-height: 80px; }
 
   /* Sticky CTA */
   .sticky-cta {
-    bottom: 16px;
-    width: calc(100% - 32px);
-    max-width: 400px;
-    gap: 0;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    width: calc(100% - 24px);
+    max-width: 380px;
+    gap: 10px;
   }
   .sticky-quote,
   .sticky-book {
     flex: 1;
     text-align: center;
-    padding: 12px 14px;
+    padding: 12px 16px;
     font-size: 0.75rem;
   }
   .form-grid { grid-template-columns: 1fr; }
