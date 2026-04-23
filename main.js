@@ -315,36 +315,6 @@
     }
   }
 
-  function initRecentCleansCarousel() {
-    var carousel = byId("recentCleansCarousel");
-    if (!carousel) return;
-
-    var slides = Array.from(carousel.querySelectorAll(".photo"));
-    if (!slides.length) return;
-
-    carousel.classList.add("is-ready");
-
-    var currentIndex = 0;
-    slides.forEach(function (slide, index) {
-      var active = index === 0;
-      slide.classList.toggle("is-active", active);
-      slide.setAttribute("aria-hidden", active ? "false" : "true");
-    });
-
-    if (slides.length < 2) return;
-
-    window.setInterval(function () {
-      var previousSlide = slides[currentIndex];
-      currentIndex = (currentIndex + 1) % slides.length;
-      var nextSlide = slides[currentIndex];
-
-      previousSlide.classList.remove("is-active");
-      previousSlide.setAttribute("aria-hidden", "true");
-      nextSlide.classList.add("is-active");
-      nextSlide.setAttribute("aria-hidden", "false");
-    }, 3400);
-  }
-
   function initScrollReveal() {
     var targets = document.querySelectorAll(
       ".service-card, .area-card, .price-card, .process-card, .testimonial-card, .highlight-panel, .split-content"
@@ -389,7 +359,6 @@
     initOptionSelection();
     initQuoteForm();
     initCleanHashNavigation();
-    initRecentCleansCarousel();
     initScrollReveal();
   });
 })();

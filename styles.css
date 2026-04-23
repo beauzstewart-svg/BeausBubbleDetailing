@@ -735,35 +735,6 @@ p { font-weight: 300; }
   line-height: 1.5;
 }
 
-.recent-carousel.is-ready {
-  display: block;
-  position: relative;
-  aspect-ratio: 16 / 7;
-  min-height: 300px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--white-faint);
-  background: var(--dark3);
-}
-.recent-carousel.is-ready .photo {
-  position: absolute;
-  inset: 0;
-  border: 0;
-  border-radius: 0;
-  opacity: 0;
-  transform: translateX(2%);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
-}
-.recent-carousel.is-ready .photo.is-active {
-  opacity: 1;
-  transform: translateX(0);
-}
-.recent-carousel.is-ready .photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* -- SPLIT GRID -- */
 .split-grid {
@@ -1242,10 +1213,6 @@ textarea { resize: vertical; min-height: 80px; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .recent-carousel.is-ready {
-    aspect-ratio: 16 / 9;
-    min-height: 240px;
-  }
   .highland-photo { display: none; }
   .split-image { min-height: 240px; }
   .why-reasons { grid-template-columns: 1fr; }
@@ -1345,10 +1312,6 @@ textarea { resize: vertical; min-height: 80px; }
   .area-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
-  .recent-carousel.is-ready {
-    aspect-ratio: 4 / 3;
-    min-height: 220px;
-  }
   .testimonial-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
 
