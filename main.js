@@ -279,6 +279,42 @@
     });
   }
 
+  function initCleanHashNavigation() {
+    function stripHashFromUrl() {
+      if (!window.location.hash) return;
+      if (!window.history || typeof window.history.replaceState !== "function") return;
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      var href = link.getAttribute("href") || "";
+      if (href.length < 2) return;
+
+      var targetId = decodeURIComponent(href.slice(1));
+      var target = byId(targetId);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      stripHashFromUrl();
+    });
+
+    if (window.location.hash.length > 1) {
+      var incomingTarget = byId(decodeURIComponent(window.location.hash.slice(1)));
+      if (incomingTarget) {
+        window.requestAnimationFrame(function () {
+          incomingTarget.scrollIntoView({ behavior: "auto", block: "start" });
+          stripHashFromUrl();
+        });
+        return;
+      }
+      stripHashFromUrl();
+    }
+  }
+
   function initScrollReveal() {
     var targets = document.querySelectorAll(
       ".service-card, .area-card, .price-card, .process-card, .testimonial-card, .highlight-panel, .split-content"
@@ -322,6 +358,7 @@
     renderOptionButtons("addOnServices", data.addOns || [], false);
     initOptionSelection();
     initQuoteForm();
+    initCleanHashNavigation();
     initScrollReveal();
   });
 })();
